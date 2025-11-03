@@ -18,7 +18,6 @@ export default function TelaCadastro() {
   const [ano, setAno] = useState("");
 
   function avancar() {
-    // exemplo de validação simples
     if (!nome || !email || !senha || !confirmarSenha || !dia || !mes || !ano) {
       alert("Preencha todos os campos!");
       return;
