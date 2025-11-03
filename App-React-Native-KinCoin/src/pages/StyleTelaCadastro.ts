@@ -8,6 +8,7 @@ export const style = StyleSheet.create({
     justifyContent: "center",
     padding: 20,
   },
+
   titulo: {
     color: "#fff",
     fontSize: 20,
@@ -15,6 +16,7 @@ export const style = StyleSheet.create({
     marginBottom: 25,
     textAlign: "center",
   },
+
   label: {
     color: "#fff",
     alignSelf: "flex-start",
@@ -22,6 +24,7 @@ export const style = StyleSheet.create({
     fontWeight: "500",
     marginBottom: 5,
   },
+
   input: {
     backgroundColor: "#fff",
     borderRadius: 10,
@@ -29,12 +32,14 @@ export const style = StyleSheet.create({
     padding: 12,
     marginBottom: 15,
   },
+
   dataContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
     width: "100%",
     marginBottom: 20,
   },
+
   inputData: {
     backgroundColor: "#fff",
     borderRadius: 10,
@@ -44,6 +49,7 @@ export const style = StyleSheet.create({
     textAlign: "center",
     fontSize: 16,
   },
+
   botao: {
     backgroundColor: "#F7931A",
     paddingVertical: 15,
@@ -51,6 +57,7 @@ export const style = StyleSheet.create({
     borderRadius: 10,
     alignItems: "center",
   },
+  
   textoBotao: {
     color: "#fff",
     fontWeight: "bold",
