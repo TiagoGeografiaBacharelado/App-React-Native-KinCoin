@@ -1,7 +1,14 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  StyleSheet,
+  Image,
+} from "react-native";
 import { style } from "./StyleTelaLogin";
-import { FontAwesome, AntDesign, MaterialIcons } from '@expo/vector-icons';
+import { FontAwesome, AntDesign, MaterialIcons } from "@expo/vector-icons";
 
 export default function TelaLogin() {
   const [email, setEmail] = useState("");
@@ -14,9 +21,9 @@ export default function TelaLogin() {
 
   return (
     <View style={styles.container}>
-      <Image 
-        source={require('./assets/Esquilo.png')} 
-        style={styles.logo} 
+      <Image
+        source={require("./assets/Esquilo.png")}
+        style={styles.logo}
         resizeMode="contain"
       />
       <Text style={styles.welcomeText}>Que bom te ver por aqui novamente!</Text>
