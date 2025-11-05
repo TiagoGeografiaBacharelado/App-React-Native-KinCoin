@@ -14,9 +14,9 @@ export default function TelaLogin() {
 
   return (
     <View style={styles.container}>
-      <Image 
-        source={require('./assets/Esquilo.png')} 
-        style={styles.logo} 
+      <Image
+        source={require("./assets/Esquilo.png")}
+        style={styles.logo}
         resizeMode="contain"
       />
       <Text style={styles.welcomeText}>Que bom te ver por aqui novamente!</Text>

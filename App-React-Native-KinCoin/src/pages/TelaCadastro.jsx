@@ -8,7 +8,7 @@ import {
   Alert,
 } from "react-native";
 import { style } from "./style/StyleTelaCadastro";
-import { ScriptTelaCadastro } from "./script/ScriptTelaCadastro"; // ✅ import usado
+import { ScriptTelaCadastro } from "./script/ScriptTelaCadastro";
 
 export default function TelaCadastro() {
   const [nome, setNome] = useState("");
