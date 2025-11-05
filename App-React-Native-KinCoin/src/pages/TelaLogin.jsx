@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from "react-native";
-import { style } from "./StyleTelaLogin";
+import { style } from "./style/StyleTelaLogin";
 import { FontAwesome, AntDesign, MaterialIcons } from '@expo/vector-icons';
 
 export default function TelaLogin() {
