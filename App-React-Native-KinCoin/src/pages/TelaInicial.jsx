@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { style } from "./style/StyleTelaInicial";
-import EsquiloComMoeda from "../assets/ChatGPT_Image_21_de_set._de_2025__20_15_59-removebg-preview 1.png";
+import EsquiloComMoeda from "../assets/images/EsquiloSentado.png";
 
 export default function TelaInicial() {
   return (
