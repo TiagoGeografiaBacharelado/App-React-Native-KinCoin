@@ -5,8 +5,10 @@ import {
   TextInput,
   TouchableOpacity,
   ScrollView,
+  Alert,
 } from "react-native";
-import { style } from "./StyleTelaCadastro";
+import { style } from "./style/StyleTelaCadastro";
+import { ScriptTelaCadastro } from "./script/ScriptTelaCadastro";
 
 export default function TelaCadastro() {
   const [nome, setNome] = useState("");
@@ -18,18 +20,14 @@ export default function TelaCadastro() {
   const [ano, setAno] = useState("");
 
   function avancar() {
-    // exemplo de validação simples
-    if (!nome || !email || !senha || !confirmarSenha || !dia || !mes || !ano) {
-      alert("Preencha todos os campos!");
+    const erro = ScriptTelaCadastro({ nome, email, senha, confirmarSenha, dia, mes, ano });
+
+    if (erro) {
+      Alert.alert("Erro no cadastro", erro);
       return;
     }
 
-    if (senha !== confirmarSenha) {
-      alert("As senhas não coincidem!");
-      return;
-    }
-
-    alert(`Cadastro de ${nome} realizado com sucesso!`);
+    Alert.alert("Sucesso!", `Cadastro de ${nome} realizado com sucesso!`);
   }
 
   return (
@@ -86,8 +84,10 @@ export default function TelaCadastro() {
           style={[style.inputData, { width: "45%" }]}
           placeholder="Mês"
           placeholderTextColor="#666"
+          keyboardType="numeric"
+          maxLength={2}
           value={mes}
-          onChangeText={setMes}
+          onChangeText={(t) => setMes(t.replace(/[^0-9]/g, ""))}
         />
         <TextInput
           style={[style.inputData, { width: "25%" }]}
