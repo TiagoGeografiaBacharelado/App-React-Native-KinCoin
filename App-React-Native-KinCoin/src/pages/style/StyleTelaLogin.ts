@@ -3,9 +3,9 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0A1F3D',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#0A1F3D",
+    alignItems: "center",
+    justifyContent: "center",
     paddingHorizontal: 20,
   },
 
@@ -16,70 +16,72 @@ const styles = StyleSheet.create({
   },
 
   welcomeText: {
-    color: 'white',
+    color: "white",
     fontSize: 18,
-    textAlign: 'center',
+    textAlign: "center",
     marginBottom: 30,
   },
-  
+
   input: {
-    width: '100%',
+    width: "100%",
     height: 50,
-    backgroundColor: 'white',
+    backgroundColor: "white",
     borderRadius: 8,
     paddingHorizontal: 15,
     marginBottom: 15,
   },
 
   forgotPassword: {
-    alignSelf: 'flex-end',
-    color: '#A0A0A0',
+    alignSelf: "flex-end",
+    color: "#A0A0A0",
     marginBottom: 20,
   },
 
   loginButton: {
-    width: '100%',
+    width: "100%",
     height: 50,
-    backgroundColor: '#FF8C00',
+    backgroundColor: "#FF8C00",
     borderRadius: 8,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     marginBottom: 15,
   },
 
   loginButtonText: {
-    color: 'white',
+    color: "white",
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
 
   signupText: {
-    color: 'white',
+    color: "white",
     marginBottom: 20,
   },
 
   signupLink: {
-    color: '#FF8C00',
-    fontWeight: 'bold',
+    color: "#FF8C00",
+    fontWeight: "bold",
   },
 
   orText: {
-    color: 'white',
+    color: "white",
     marginBottom: 10,
   },
 
   socialContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '60%',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "60%",
   },
-  
+
   socialButton: {
-    backgroundColor: '#3b5998',
+    backgroundColor: "#3b5998",
     width: 50,
     height: 50,
     borderRadius: 25,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
+
+export default styles;

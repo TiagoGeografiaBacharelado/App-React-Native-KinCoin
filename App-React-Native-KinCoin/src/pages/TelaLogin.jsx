@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
-import { style } from "./style/StyleTelaLogin";
+import styles from "./style/StyleTelaLogin";
 import { FontAwesome, AntDesign } from "@expo/vector-icons";
 import Esquilo from "../assets/images/EsquiloAndandoDireita.png";
 
@@ -14,13 +14,13 @@ export default function TelaLogin() {
   };
 
   return (
-    <View style={style.container}>
-      <Image source={Esquilo} style={style.logo} resizeMode="contain" />
+    <View style={styles.container}>
+      <Image source={Esquilo} style={styles.logo} resizeMode="contain" />
 
-      <Text style={style.welcomeText}>Que bom te ver por aqui novamente!</Text>
+      <Text style={styles.welcomeText}>Que bom te ver por aqui novamente!</Text>
 
       <TextInput
-        style={style.input}
+        style={styles.input}
         placeholder="E-mail"
         value={email}
         onChangeText={setEmail}
@@ -29,7 +29,7 @@ export default function TelaLogin() {
       />
 
       <TextInput
-        style={style.input}
+        style={styles.input}
         placeholder="Senha"
         value={password}
         onChangeText={setPassword}
@@ -37,27 +37,27 @@ export default function TelaLogin() {
       />
 
       <TouchableOpacity>
-        <Text style={style.forgotPassword}>Esqueceu a sua senha?</Text>
+        <Text style={styles.forgotPassword}>Esqueceu a sua senha?</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={style.loginButton} onPress={handleLogin}>
-        <Text style={style.loginButtonText}>Entrar</Text>
+      <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
+        <Text style={styles.loginButtonText}>Entrar</Text>
       </TouchableOpacity>
 
-      <Text style={style.signupText}>
-        Não tem uma conta? <Text style={style.signupLink}>Cadastre-se</Text>
+      <Text style={styles.signupText}>
+        Não tem uma conta? <Text style={styles.signupLink}>Cadastre-se</Text>
       </Text>
 
-      <Text style={style.orText}>Logar com</Text>
+      <Text style={styles.orText}>Logar com</Text>
 
-      <View style={style.socialContainer}>
-        <TouchableOpacity style={style.socialButton}>
+      <View style={styles.socialContainer}>
+        <TouchableOpacity style={styles.socialButton}>
           <FontAwesome name="facebook" size={24} color="white" />
         </TouchableOpacity>
-        <TouchableOpacity style={style.socialButton}>
+        <TouchableOpacity style={styles.socialButton}>
           <AntDesign name="google" size={24} color="white" />
         </TouchableOpacity>
-        <TouchableOpacity style={style.socialButton}>
+        <TouchableOpacity style={styles.socialButton}>
           <AntDesign name="apple1" size={24} color="white" />
         </TouchableOpacity>
       </View>
