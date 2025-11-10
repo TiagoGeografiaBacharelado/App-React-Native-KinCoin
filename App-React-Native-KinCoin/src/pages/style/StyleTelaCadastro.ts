@@ -1,6 +1,31 @@
 import { StyleSheet } from "react-native";
 
 export const style = StyleSheet.create({
+
+  progressoContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 20,
+    marginTop: 10,
+  },
+
+  progressoAtivo: {
+    width: 50,
+    height: 6,
+    backgroundColor: "#F7931A",
+    borderRadius: 10,
+    marginHorizontal: 5,
+  },
+
+  progressoInativo: {
+    width: 50,
+    height: 6,
+    backgroundColor: "#16324A",
+    borderRadius: 10,
+    marginHorizontal: 5,
+  },
+
   container: {
     flexGrow: 1,
     backgroundColor: "#001B2E",

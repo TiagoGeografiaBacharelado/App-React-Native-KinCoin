@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import TelaInicial from "./src/pages/TelaInicial";
 import TelaCadastro from "./src/pages/TelaCadastro";
 import TelaLogin from "./src/pages/TelaLogin";
+import TelaCadastro2 from "./src/pages/TelaCadastro2";
 
 const Stack = createNativeStackNavigator();
 
@@ -26,6 +27,13 @@ export default function App() {
           component={TelaCadastro}
           options={{ title: "Cadastro" }}
         />
+
+        <Stack.Screen
+          name="TelaCadastro2"
+          component={TelaCadastro2}
+          options={{ title: "Cadastro - Continuação" }}
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
