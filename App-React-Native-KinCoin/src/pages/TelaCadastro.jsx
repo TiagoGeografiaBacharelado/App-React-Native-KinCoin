@@ -32,6 +32,13 @@ export default function TelaCadastro() {
 
   return (
     <ScrollView contentContainerStyle={style.container}>
+    
+      <View style={style.progressoContainer}>
+        <View style={style.progressoAtivo} />
+        <View style={style.progressoInativo} />
+        <View style={style.progressoInativo} />
+      </View>
+
       <Text style={style.titulo}>Seja bem-vindo, ao KinCoin!</Text>
 
       <Text style={style.label}>Nome</Text>

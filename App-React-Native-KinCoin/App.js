@@ -4,6 +4,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import TelaInicial from "./src/pages/TelaInicial";
 import TelaCadastro from "./src/pages/TelaCadastro";
 import TelaLogin from "./src/pages/TelaLogin";
+import TelaCadastro2 from "./src/pages/TelaCadastro2";
+import RecuperacaoSenha from "./src/pages/RecuperacaoSenha"; // ✅ IMPORTA A NOVA TELA
 
 const Stack = createNativeStackNavigator();
 
@@ -25,6 +27,16 @@ export default function App() {
           name="TelaCadastro"
           component={TelaCadastro}
           options={{ title: "Cadastro" }}
+        />
+        <Stack.Screen
+          name="TelaCadastro2"
+          component={TelaCadastro2}
+          options={{ title: "Cadastro - Continuação" }}
+        />
+        <Stack.Screen
+          name="RecuperacaoSenha"
+          component={RecuperacaoSenha}
+          options={{ title: "Recuperação de Senha" }}
         />
       </Stack.Navigator>
     </NavigationContainer>
