@@ -1,11 +1,10 @@
-// QuizScreen.jsx
-import React, { useEffect, useState } from "react";
-import { View, Image, ScrollView, StyleSheet, Alert } from "react-native";
+// TelaDeQuestao.jsx
+import { useEffect, useState } from "react";
+import { Alert, Image, ScrollView, StyleSheet, View } from "react-native";
 import {
   Appbar,
   Button,
   Card,
-  Paragraph,
   ProgressBar,
   RadioButton,
   Text,
@@ -21,7 +20,7 @@ import { collection, getDocs } from "firebase/firestore";
 // Para buscar JSON local
 import questionsLocal from "./questions.json";
 
-export default function QuizScreen() {
+export default function TelaDeQuestao() {
   const [questions, setQuestions] = useState([]);
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState(null);
@@ -42,7 +41,7 @@ export default function QuizScreen() {
   // BUSCAR QUESTÕES DO FIREBASE
   async function loadQuestionsFirebase() {
     try {
-      const querySnap = await getDocs(collection(db, "quiz"));
+      const querySnap = await getDocs(collection(db, "questao"));
       const list = [];
 
       querySnap.forEach(doc => {
@@ -98,7 +97,7 @@ export default function QuizScreen() {
       setSelected(null);
       setProgress((next + 1) / questions.length);
     } else {
-      Alert.alert("Fim", "Você completou o quiz!");
+      Alert.alert("Fim", "Você completou a Questão!");
     }
   }
 
@@ -116,7 +115,7 @@ export default function QuizScreen() {
     <SafeAreaView style={styles.container}>
       <Appbar.Header elevated>
         <Appbar.BackAction onPress={() => {}} />
-        <Appbar.Content title="Quiz" />
+        <Appbar.Content title="Questão" />
       </Appbar.Header>
 
       <View style={styles.progressContainer}>

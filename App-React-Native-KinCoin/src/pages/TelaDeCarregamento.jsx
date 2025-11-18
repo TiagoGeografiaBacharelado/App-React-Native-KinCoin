@@ -1,9 +1,8 @@
-import React from "react";
 
-import { Text, View, Image } from "react-native";
+import { Image, Text, View } from "react-native";
 
-import { style } from "./StyleTelaDeCarregamento";
 import Logo from "../assets/ImgTelaCarregamento.png";
+import { style } from "./StyleTelaDeCarregamento";
 
 export default function Login() {
   return (
