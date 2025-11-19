@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "question": "Pergunta de exemplo",
+    "image": "",
+    "options": {
+      "A": "Opção 1",
+      "B": "Opção 2",
+      "C": "Opção 3",
+      "D": "Opção 4",
+      "E": "Opção 5"
+    },
+    "correct": "A"
+  },
+  {
+    "id": 2,
+    "question": "O que é Educação Financeira?",
+    "image": "",
+    "options": {
+      "A": "Tomar decisões conscientes sobre o uso do dinheiro",
+      "B": "Anotar todos os gastos",
+      "C": "Coisa de banco",
+      "D": "Não gastar dinheiro"
+    },
+    "correct": "A",
+    "explanation": "Educação financeira é sobre entender como usar o dinheiro com consciência e planejamento."
+  }
+
+]
+
