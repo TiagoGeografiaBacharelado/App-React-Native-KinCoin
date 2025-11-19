@@ -1,16 +1,16 @@
 // TelaDeQuestao.jsx
 import { useEffect, useState } from "react";
-import { Alert, Image, ScrollView, StyleSheet, View } from "react-native";
+import { Alert, Image, ScrollView, View } from "react-native";
 import {
   Appbar,
   Button,
   Card,
   ProgressBar,
   RadioButton,
-  Text,
-  Title
+  Text
 } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { style } from "./style/StyleTelaDeQuestao";
 
 // Firebase
 /*import { db } from "../../firebaseConfig";
@@ -103,7 +103,7 @@ export default function TelaDeQuestao() {
 
   if (loading) {
     return (
-      <SafeAreaView style={styles.center}>
+      <SafeAreaView style={style.center}>
         <Text>Carregando questões...</Text>
       </SafeAreaView>
     );
@@ -112,24 +112,24 @@ export default function TelaDeQuestao() {
   const q = questions[index];
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={style.container}>
       <Appbar.Header elevated>
         <Appbar.BackAction onPress={() => {}} />
         <Appbar.Content title="Questão" />
       </Appbar.Header>
 
-      <View style={styles.progressContainer}>
-        <ProgressBar progress={progress} style={styles.progress} />
+      <View style={style.progressContainer}>
+        <ProgressBar progress={progress} style={style.progress} />
         <Text>{Math.round(progress * 100)}%</Text>
       </View>
 
-      <ScrollView contentContainerStyle={styles.scrollContent}>
-        <Card style={styles.card}>
+      <ScrollView contentContainerStyle={style.scrollContent}>
+        <Card style={style.card}>
           <Card.Content>
-            <Title>{q.question}</Title>
+            <largeText>{q.question}</largeText>
 
             {q.image ? (
-              <Image source={{ uri: q.image }} style={styles.questionImage} />
+              <Image source={{ uri: q.image }} style={style.questionImage} />
             ) : null}
 
             <RadioButton.Group
@@ -137,10 +137,10 @@ export default function TelaDeQuestao() {
               value={selected ?? ""}
             >
               {q.optionsShuffled.map(opt => (
-                <Card key={opt.id} style={styles.optionCard}>
-                  <Card.Content style={styles.optionRow}>
+                <Card key={opt.id} style={style.optionCard}>
+                  <Card.Content style={style.optionRow}>
                     <RadioButton value={opt.id} />
-                    <Text style={styles.optionLabel}>
+                    <Text style={style.optionLabel}>
                       {opt.id}) {opt.label}
                     </Text>
                   </Card.Content>
@@ -152,7 +152,7 @@ export default function TelaDeQuestao() {
               mode="contained"
               onPress={handleConfirm}
               disabled={!selected}
-              style={styles.confirmButton}
+              style={style.confirmButton}
             >
               Confirmar
             </Button>
@@ -163,20 +163,4 @@ export default function TelaDeQuestao() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#fff" },
-  center: { flex: 1, justifyContent: "center", alignItems: "center" },
-  progressContainer: {
-    padding: 16,
-    alignItems: "center",
-  },
-  progress: { height: 8, width: "90%" },
-  scrollContent: { padding: 16 },
-  card: { marginTop: 8, paddingBottom: 8 },
-  questionImage: { width: "100%", height: 150, marginVertical: 8 },
-  optionCard: { marginVertical: 6 },
-  optionRow: { flexDirection: "row", alignItems: "center" },
-  optionLabel: { marginLeft: 6, flex: 1 },
-  confirmButton: { marginTop: 16 },
-});
 

@@ -2,9 +2,9 @@
 import { Image, Text, View } from "react-native";
 
 import Logo from "../assets/ImgTelaCarregamento.png";
-import { style } from "./StyleTelaDeCarregamento";
+import { style } from "./style/StyleTelaDeCarregamento";
 
-export default function Login() {
+export default function TelaDeCarregamento() {
   return (
     <View style={style.container}>
       <View style={style.boxTop}>
