@@ -4,7 +4,7 @@ import styles from "./style/StyleTelaLogin";
 import { FontAwesome, AntDesign } from "@expo/vector-icons";
 import Esquilo from "../assets/images/EsquiloAndandoDireita.png";
 
-export default function TelaLogin() {
+export default function TelaLogin({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -36,7 +36,7 @@ export default function TelaLogin() {
         secureTextEntry
       />
 
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate("RecuperacaoSenha")}>
         <Text style={styles.forgotPassword}>Esqueceu a sua senha?</Text>
       </TouchableOpacity>
 

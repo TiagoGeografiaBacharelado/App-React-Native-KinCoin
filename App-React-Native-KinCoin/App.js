@@ -5,7 +5,8 @@ import TelaInicial from "./src/pages/TelaInicial";
 import TelaCadastro from "./src/pages/TelaCadastro";
 import TelaLogin from "./src/pages/TelaLogin";
 import TelaCadastro2 from "./src/pages/TelaCadastro2";
-import RecuperacaoSenha from "./src/pages/RecuperacaoSenha"; // ✅ IMPORTA A NOVA TELA
+import RecuperacaoSenha from "./src/pages/RecuperacaoSenha";
+import RecuperacaoSenha2 from "./src/pages/RecuperacaoSenha2";
 
 const Stack = createNativeStackNavigator();
 
@@ -37,6 +38,11 @@ export default function App() {
           name="RecuperacaoSenha"
           component={RecuperacaoSenha}
           options={{ title: "Recuperação de Senha" }}
+        />
+        <Stack.Screen
+          name="RecuperacaoSenha2"
+          component={RecuperacaoSenha2}
+          options={{ title: "Código de Verificação" }}
         />
       </Stack.Navigator>
     </NavigationContainer>
