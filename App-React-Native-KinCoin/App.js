@@ -2,6 +2,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import TelaDeQuestao from "./src/pages/TelaDeQuestao";
+import TelaFinal from "./src/pages/TelaFinal"; // ✅ Faltava ISSO
 
 const Stack = createNativeStackNavigator();
 
@@ -23,4 +24,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
