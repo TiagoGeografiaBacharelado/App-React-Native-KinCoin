@@ -13,7 +13,7 @@ export default function App() {
         <Stack.Screen
           name="Questao"
           component={TelaDeQuestao}
-          options={{ title: "Questão" }}
+          options={{ title: "Modulo 1" }}
         />
         <Stack.Screen
           name="Final"

@@ -4,7 +4,7 @@ import { StyleSheet } from "react-native";
 export const style = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#07264E",
+    //backgroundColor: "#07264E",
   },
   center: {
     flex: 1,
@@ -19,7 +19,7 @@ export const style = StyleSheet.create({
     height: 8,
     width: "100%",
     borderRadius: 8,
-    backgroundColor: "#F28B2D",
+    //backgroundColor: "#F28B2D",
   },
   scrollContent: {
     padding: 16,
@@ -27,7 +27,7 @@ export const style = StyleSheet.create({
   card: {
     marginTop: 8,
     paddingBottom: 8,
-    backgroundColor: "#021F35",
+    //backgroundColor: "#021F35",
   },
   questionImage: {
     width: "100%",
@@ -46,6 +46,7 @@ export const style = StyleSheet.create({
   optionRow: {
     flexDirection: "row",
     alignItems: "center",
+    //backgroundColor: "#0A3A5E",
   },
   optionLabel: {
     marginLeft: 6,
@@ -55,7 +56,7 @@ export const style = StyleSheet.create({
   marginTop: 16,
   borderRadius: 12,
   paddingVertical: 8,
-  backgroundColor: "#F28B2D",
+  
   width: "100%",
 },
 

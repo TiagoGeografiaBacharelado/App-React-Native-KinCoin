@@ -1,14 +1,7 @@
 // TelaDeQuestao.jsx
 import { useEffect, useState } from "react";
 import { Alert, Image, ScrollView, View } from "react-native";
-import {
-  Appbar,
-  Button,
-  Card,
-  ProgressBar,
-  RadioButton,
-  Text,
-} from "react-native-paper";
+import { Appbar, Button, Card, ProgressBar, RadioButton, Text, } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { style } from "./style/StyleTelaDeQuestao";
 
