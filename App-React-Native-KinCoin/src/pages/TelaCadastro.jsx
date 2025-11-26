@@ -10,7 +10,7 @@ import {
 import { style } from "./style/StyleTelaCadastro";
 import { ScriptTelaCadastro } from "./script/ScriptTelaCadastro";
 
-export default function TelaCadastro() {
+export default function TelaCadastro({ navigation }) {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -20,7 +20,15 @@ export default function TelaCadastro() {
   const [ano, setAno] = useState("");
 
   function avancar() {
-    const erro = ScriptTelaCadastro({ nome, email, senha, confirmarSenha, dia, mes, ano });
+    const erro = ScriptTelaCadastro({
+      nome,
+      email,
+      senha,
+      confirmarSenha,
+      dia,
+      mes,
+      ano,
+    });
 
     if (erro) {
       Alert.alert("Erro no cadastro", erro);
@@ -32,10 +40,8 @@ export default function TelaCadastro() {
 
   return (
     <ScrollView contentContainerStyle={style.container}>
-    
       <View style={style.progressoContainer}>
         <View style={style.progressoAtivo} />
-        <View style={style.progressoInativo} />
         <View style={style.progressoInativo} />
       </View>
 
