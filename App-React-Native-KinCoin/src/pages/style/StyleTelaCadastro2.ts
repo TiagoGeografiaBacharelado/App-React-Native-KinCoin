@@ -1,68 +1,73 @@
-export const style = {
+import { StyleSheet } from "react-native";
+
+export const style = StyleSheet.create({
   container: {
     flexGrow: 1,
-    backgroundColor: "#041527",
+    backgroundColor: "#001B2E",
     alignItems: "center",
-    paddingTop: 40,
-    paddingHorizontal: 20,
+    justifyContent: "center",
+    padding: 20,
   },
 
   progressoContainer: {
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 30,
+    marginBottom: 20,
+    marginTop: 10,
   },
 
   progressoAtivo: {
     width: 50,
     height: 6,
-    backgroundColor: "#F7981D",
-    borderRadius: 8,
+    backgroundColor: "#F7931A",
+    borderRadius: 10,
     marginHorizontal: 5,
   },
 
   progressoInativo: {
     width: 50,
     height: 6,
-    backgroundColor: "#2A2A2A",
-    borderRadius: 8,
+    backgroundColor: "#16324A",
+    borderRadius: 10,
     marginHorizontal: 5,
   },
 
   titulo: {
-    fontSize: 28,
-    color: "#ffffff",
+    color: "#fff",
+    fontSize: 20,
     fontWeight: "bold",
-    marginBottom: 20,
+    marginBottom: 25,
+    textAlign: "center",
   },
 
   imagem: {
-    width: 200,
-    height: 200,
+    width: 180,
+    height: 180,
     marginBottom: 20,
+    resizeMode: "contain",
   },
 
   textoCentral: {
+    color: "#fff",
+    fontSize: 16,
     textAlign: "center",
-    fontSize: 18,
-    color: "#ffffff",
-    marginBottom: 40,
-    lineHeight: 26,
+    lineHeight: 22,
+    marginBottom: 30,
+    paddingHorizontal: 10,
   },
 
   botao: {
-    backgroundColor: "#F7981D",
-    width: "90%",
+    backgroundColor: "#F7931A",
     paddingVertical: 15,
-    alignItems: "center",
+    width: "100%",
     borderRadius: 10,
-    marginTop: 10,
+    alignItems: "center",
   },
 
   textoBotao: {
-    color: "#000",
+    color: "#fff",
     fontWeight: "bold",
-    fontSize: 18,
+    fontSize: 16,
   },
-};
+});

@@ -35,7 +35,7 @@ export default function TelaCadastro({ navigation }) {
       return;
     }
 
-    Alert.alert("Sucesso!", `Cadastro de ${nome} realizado com sucesso!`);
+    navigation.navigate("TelaCadastro2");
   }
 
   return (
@@ -113,7 +113,13 @@ export default function TelaCadastro({ navigation }) {
         />
       </View>
 
-      <TouchableOpacity style={style.botao} onPress={avancar}>
+      <TouchableOpacity
+        style={style.botao}
+        onPress={() => {
+          console.log("NAVEGANDO...");
+          navigation.navigate("TelaCadastro2");
+        }}
+      >
         <Text style={style.textoBotao}>Avançar</Text>
       </TouchableOpacity>
     </ScrollView>
