@@ -7,6 +7,8 @@ import TelaLogin from "./src/pages/TelaLogin";
 import TelaCadastro2 from "./src/pages/TelaCadastro2";
 import RecuperacaoSenha from "./src/pages/RecuperacaoSenha";
 import RecuperacaoSenha2 from "./src/pages/RecuperacaoSenha2";
+import TelaPerguntas from "./src/pages/TelaPerguntas";
+import TelaPerguntas2 from "./src/pages/TelaPerguntas2";
 
 const Stack = createNativeStackNavigator();
 
@@ -43,6 +45,16 @@ export default function App() {
           name="RecuperacaoSenha2"
           component={RecuperacaoSenha2}
           options={{ title: "Código de Verificação" }}
+        />
+        <Stack.Screen
+          name="TelaPerguntas"
+          component={TelaPerguntas}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="TelaPerguntas2"
+          component={TelaPerguntas2}
+          options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -26,7 +26,10 @@ export default function TelaCadastro2({ navigation }) {
         Financeira do Brasil!
       </Text>
 
-      <TouchableOpacity style={style.botao}>
+      <TouchableOpacity
+        style={style.botao}
+        onPress={() => navigation.navigate("TelaPerguntas")}
+      >
         <Text style={style.textoBotao}>Cadastrar</Text>
       </TouchableOpacity>
     </ScrollView>

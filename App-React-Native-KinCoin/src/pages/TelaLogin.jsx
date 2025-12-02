@@ -11,6 +11,8 @@ export default function TelaLogin({ navigation }) {
   const handleLogin = () => {
     console.log("Email:", email);
     console.log("Senha:", password);
+
+    navigation.navigate("TelaPerguntas");
   };
 
   return (
