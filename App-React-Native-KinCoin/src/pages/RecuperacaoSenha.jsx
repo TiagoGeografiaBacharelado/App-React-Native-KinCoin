@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
-import styles from "./style/StyleRecuperacaoSenha"; 
+import styles from "./style/StyleRecuperacaoSenha";
 
 export default function RecuperacaoSenha({ navigation }) {
   const [email, setEmail] = useState("");
 
   return (
     <View style={styles.container}>
-
       <Text style={styles.title}>Recuperação de senha</Text>
 
       <Text style={styles.description}>
-        Para conseguir recuperar sua senha, informe o e-mail cadastrado no nosso 
+        Para conseguir recuperar sua senha, informe o e-mail cadastrado no nosso
         sistema e enviaremos o código de confirmação.
       </Text>
 
@@ -24,7 +23,10 @@ export default function RecuperacaoSenha({ navigation }) {
         autoCapitalize="none"
       />
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate("RecuperacaoSenha2")}
+      >
         <Text style={styles.buttonText}>Continuar</Text>
       </TouchableOpacity>
 

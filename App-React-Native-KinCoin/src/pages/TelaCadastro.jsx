@@ -10,7 +10,7 @@ import {
 import { style } from "./style/StyleTelaCadastro";
 import { ScriptTelaCadastro } from "./script/ScriptTelaCadastro";
 
-export default function TelaCadastro() {
+export default function TelaCadastro({ navigation }) {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -20,22 +20,28 @@ export default function TelaCadastro() {
   const [ano, setAno] = useState("");
 
   function avancar() {
-    const erro = ScriptTelaCadastro({ nome, email, senha, confirmarSenha, dia, mes, ano });
+    const erro = ScriptTelaCadastro({
+      nome,
+      email,
+      senha,
+      confirmarSenha,
+      dia,
+      mes,
+      ano,
+    });
 
     if (erro) {
       Alert.alert("Erro no cadastro", erro);
       return;
     }
 
-    Alert.alert("Sucesso!", `Cadastro de ${nome} realizado com sucesso!`);
+    navigation.navigate("TelaCadastro2");
   }
 
   return (
     <ScrollView contentContainerStyle={style.container}>
-    
       <View style={style.progressoContainer}>
         <View style={style.progressoAtivo} />
-        <View style={style.progressoInativo} />
         <View style={style.progressoInativo} />
       </View>
 
@@ -107,7 +113,13 @@ export default function TelaCadastro() {
         />
       </View>
 
-      <TouchableOpacity style={style.botao} onPress={avancar}>
+      <TouchableOpacity
+        style={style.botao}
+        onPress={() => {
+          console.log("NAVEGANDO...");
+          navigation.navigate("TelaCadastro2");
+        }}
+      >
         <Text style={style.textoBotao}>Avançar</Text>
       </TouchableOpacity>
     </ScrollView>
