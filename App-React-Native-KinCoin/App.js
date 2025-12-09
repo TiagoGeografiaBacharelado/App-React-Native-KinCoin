@@ -9,6 +9,8 @@ import RecuperacaoSenha from "./src/pages/RecuperacaoSenha";
 import RecuperacaoSenha2 from "./src/pages/RecuperacaoSenha2";
 import TelaPerguntas from "./src/pages/TelaPerguntas";
 import TelaPerguntas2 from "./src/pages/TelaPerguntas2";
+import TelaPerguntas3 from "./src/pages/TelaPerguntas3";
+import TelaPerguntas4 from "./src/pages/TelaPerguntas4";
 
 const Stack = createNativeStackNavigator();
 
@@ -54,6 +56,17 @@ export default function App() {
         <Stack.Screen
           name="TelaPerguntas2"
           component={TelaPerguntas2}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="TelaPerguntas3"
+          component={TelaPerguntas3}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="TelaPerguntas4"
+          component={TelaPerguntas4}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

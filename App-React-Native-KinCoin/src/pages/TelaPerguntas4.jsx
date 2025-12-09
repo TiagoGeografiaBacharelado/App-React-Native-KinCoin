@@ -1,76 +1,53 @@
 import React from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import { View, Text, TouchableOpacity } from "react-native";
 import style from "./style/StyleTelaPerguntas4";
-import Esquilo from "../assets/images/EsquiloComCelular.png";
 
 export default function TelaPerguntas4({ navigation }) {
+  const escolherResposta = (resposta) => {
+    console.log("Resposta P4:", resposta);
 
-  function escolherTempo(tempo) {
-    console.log("Tempo selecionado:", tempo);
-
-    navigation.navigate("Home");
-  }
+    // Teste de navegação
+    navigation.navigate("TelaInicial");
+  };
 
   return (
     <View style={style.container}>
-      
       <Text style={style.titulo}>
-        Quanto tempo você pode{"\n"}
-        dedicar diariamente ao{"\n"}
-        estudo ?
+        Qual é o seu principal objetivo com{"\n"}
+        Educação Financeira?
       </Text>
 
-      <View style={style.linha}>
-        <TouchableOpacity
-          style={[style.botao, style.btnLaranjaPequeno]}
-          onPress={() => escolherTempo("5 min/dia")}
-        >
-          <Ionicons name="time-outline" size={18} color="#FFF" />
-          <Text style={style.textoBotao}>5min/dia</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={[style.botao, style.btnLaranjaPequeno]}
-          onPress={() => escolherTempo("10 min/dia")}
-        >
-          <Ionicons name="time-outline" size={18} color="#FFF" />
-          <Text style={style.textoBotao}>10min/dia</Text>
-        </TouchableOpacity>
-      </View>
-
-      <View style={style.linha}>
-        <TouchableOpacity
-          style={[style.botao, style.btnLaranjaPequeno]}
-          onPress={() => escolherTempo("20 min/dia")}
-        >
-          <Ionicons name="time-outline" size={18} color="#FFF" />
-          <Text style={style.textoBotao}>20min/dia</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={[style.botao, style.btnLaranjaPequeno]}
-          onPress={() => escolherTempo("30 min/dia")}
-        >
-          <Ionicons name="time-outline" size={18} color="#FFF" />
-          <Text style={style.textoBotao}>30min/dia</Text>
-        </TouchableOpacity>
-      </View>
-
       <TouchableOpacity
-        style={[style.botao, style.btnLaranja]}
-        onPress={() => escolherTempo("+ de 30 min/dia")}
+        activeOpacity={0.8}
+        style={[style.botao, style.btnVerde]}
+        onPress={() => escolherResposta("Quitar dívidas")}
       >
-        <Ionicons name="time-outline" size={20} color="#FFF" />
-        <Text style={style.textoBotao}>+ de 30min/dia</Text>
+        <Text style={style.textoBotao}>Quitar dívidas</Text>
       </TouchableOpacity>
 
-      <Image
-        source={Esquilo}
-        style={style.imagem}
-        resizeMode="contain"
-      />
+      <TouchableOpacity
+        activeOpacity={0.8}
+        style={[style.botao, style.btnLaranja]}
+        onPress={() => escolherResposta("Criar reserva")}
+      >
+        <Text style={style.textoBotao}>Criar reserva</Text>
+      </TouchableOpacity>
 
+      <TouchableOpacity
+        activeOpacity={0.8}
+        style={[style.botao, style.btnVermelho]}
+        onPress={() => escolherResposta("Investir")}
+      >
+        <Text style={style.textoBotao}>Investir</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        activeOpacity={0.8}
+        style={[style.botao, style.btnRoxo]}
+        onPress={() => escolherResposta("Organizar gastos")}
+      >
+        <Text style={style.textoBotao}>Organizar gastos</Text>
+      </TouchableOpacity>
     </View>
   );
 }

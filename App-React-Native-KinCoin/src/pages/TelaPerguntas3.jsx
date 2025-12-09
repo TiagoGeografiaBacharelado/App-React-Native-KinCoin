@@ -1,48 +1,50 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
-import { Ionicons, MaterialIcons, FontAwesome5 } from "@expo/vector-icons";
-import styles from "./style/StyleTelaPerguntas3";
+import style from "./style/StyleTelaPerguntas3";
 
 export default function TelaPerguntas3({ navigation }) {
+  function escolherResposta(opcao) {
+    console.log("Resposta P3:", opcao);
+
+    navigation.navigate("TelaPerguntas4", {
+      resposta3: opcao,
+    });
+  }
+
   return (
-    <View style={styles.container}>
-
-      <TouchableOpacity
-        style={{ position: "absolute", left: 20, top: 50 }}
-        onPress={() => navigation.goBack()}
-      >
-        <Ionicons name="arrow-back" size={26} color="#FFF" />
-      </TouchableOpacity>
-
-      <Text style={styles.titulo}>
-        Qual o seu Objetivo{"\n"}Financeiro?
+    <View style={style.container}>
+      <Text style={style.titulo}>
+        Quanto você costuma{"\n"}
+        guardar por mês?
       </Text>
 
-      <TouchableOpacity style={[styles.botao, styles.btnLaranja]}>
-        <Ionicons name="time-outline" size={20} color="#FFF" />
-        <Text style={styles.textoBotao}>Planejar Aposentadoria</Text>
+      <TouchableOpacity
+        style={style.botao}
+        onPress={() => escolherResposta("Nada")}
+      >
+        <Text style={style.textoBotao}>Nada</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={[styles.botao, styles.btnLaranja]}>
-        <MaterialIcons name="search" size={20} color="#FFF" />
-        <Text style={styles.textoBotao}>Controle de Gastos</Text>
+      <TouchableOpacity
+        style={style.botao}
+        onPress={() => escolherResposta("Até 10%")}
+      >
+        <Text style={style.textoBotao}>Até 10% da renda</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={[styles.botao, styles.btnLaranja]}>
-        <Ionicons name="happy-outline" size={20} color="#FFF" />
-        <Text style={styles.textoBotao}>Aprender a investir</Text>
+      <TouchableOpacity
+        style={style.botao}
+        onPress={() => escolherResposta("10% a 30%")}
+      >
+        <Text style={style.textoBotao}>10% a 30%</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={[styles.botao, styles.btnLaranja]}>
-        <Ionicons name="ellipsis-horizontal" size={20} color="#FFF" />
-        <Text style={styles.textoBotao}>Conquistar Algo</Text>
+      <TouchableOpacity
+        style={style.botao}
+        onPress={() => escolherResposta("Mais de 30%")}
+      >
+        <Text style={style.textoBotao}>Mais de 30%</Text>
       </TouchableOpacity>
-
-      <TouchableOpacity style={[styles.botao, styles.btnLaranja]}>
-        <FontAwesome5 name="star" size={18} color="#FFF" />
-        <Text style={styles.textoBotao}>Investir</Text>
-      </TouchableOpacity>
-
     </View>
   );
 }

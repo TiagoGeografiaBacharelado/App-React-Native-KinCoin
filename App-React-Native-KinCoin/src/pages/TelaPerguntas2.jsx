@@ -6,9 +6,11 @@ import Esquilo from "../assets/images/EsquiloSentado.png";
 
 export default function TelaPerguntas2({ navigation }) {
   function escolherNivel(nivel) {
-    console.log("Nível selecionado:", nivel);
+    console.log("Resposta P2:", nivel);
 
-    navigation.navigate("Home");
+    navigation.navigate("TelaPerguntas3", {
+      resposta2: nivel,
+    });
   }
 
   return (

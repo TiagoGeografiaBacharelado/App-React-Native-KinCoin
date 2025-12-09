@@ -3,56 +3,50 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#001B2E",
+    backgroundColor: "#041527",
     alignItems: "center",
-    paddingTop: 60,
+    paddingTop: 40,
+    paddingHorizontal: 20,
   },
 
   titulo: {
-    color: "#FFF",
-    textAlign: "center",
-    fontSize: 22,
+    fontSize: 26,
+    color: "#ffffff",
     fontWeight: "bold",
-    marginBottom: 35,
-    lineHeight: 30,
-  },
-
-  linha: {
-    width: "85%",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginBottom: 16,
+    textAlign: "center",
+    marginBottom: 30,
+    lineHeight: 32,
   },
 
   botao: {
-    height: 52,
-    borderRadius: 30,
-    flexDirection: "row",
-    alignItems: "center",
+    width: "100%",
+    height: 55,
+    borderRadius: 10,
     justifyContent: "center",
-    gap: 8,
-  },
-
-  btnLaranjaPequeno: {
-    width: "47%",
-    backgroundColor: "#FF9E00",
-  },
-
-  btnLaranja: {
-    width: "80%",
-    backgroundColor: "#FF9E00",
-    marginTop: 10,
+    alignItems: "center",
+    marginBottom: 15,
   },
 
   textoBotao: {
-    color: "#FFF",
-    fontSize: 16,
+    color: "#ffffff",
+    fontSize: 18,
     fontWeight: "bold",
   },
 
-  imagem: {
-    width: 180,
-    height: 180,
-    marginTop: 40,
+  /* CORES DOS BOTÕES */
+  btnVerde: {
+    backgroundColor: "#66E01B",
+  },
+
+  btnLaranja: {
+    backgroundColor: "#FF9E00",
+  },
+
+  btnVermelho: {
+    backgroundColor: "#FF4545",
+  },
+
+  btnRoxo: {
+    backgroundColor: "#C77DFF",
   },
 });
