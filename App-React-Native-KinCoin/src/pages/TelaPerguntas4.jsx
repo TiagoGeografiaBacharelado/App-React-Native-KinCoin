@@ -6,8 +6,10 @@ export default function TelaPerguntas4({ navigation }) {
   const escolherResposta = (resposta) => {
     console.log("Resposta P4:", resposta);
 
-    // Teste de navegação
-    navigation.navigate("TelaInicial");
+    navigation.reset({
+      index: 0,
+      routes: [{ name: "TelaPrincipal" }],
+    });
   };
 
   return (

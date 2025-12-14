@@ -11,6 +11,7 @@ import TelaPerguntas from "./src/pages/TelaPerguntas";
 import TelaPerguntas2 from "./src/pages/TelaPerguntas2";
 import TelaPerguntas3 from "./src/pages/TelaPerguntas3";
 import TelaPerguntas4 from "./src/pages/TelaPerguntas4";
+import TelaPrincipal from "./src/pages/TelaPrincipal";
 
 const Stack = createNativeStackNavigator();
 
@@ -67,6 +68,12 @@ export default function App() {
         <Stack.Screen
           name="TelaPerguntas4"
           component={TelaPerguntas4}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="TelaPrincipal"
+          component={TelaPrincipal}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
