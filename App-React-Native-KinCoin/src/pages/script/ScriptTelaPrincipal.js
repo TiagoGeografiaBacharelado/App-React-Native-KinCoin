@@ -10,7 +10,9 @@ export default function ScriptTelaPrincipal(navigation) {
 
   async function carregarProgresso() {
     const valor = await AsyncStorage.getItem("@progresso");
-    if (valor) setProgresso(Number(valor));
+    if (valor) {
+      setProgresso(Number(valor));
+    }
   }
 
   async function salvarProgresso(novoProgresso) {
@@ -20,14 +22,18 @@ export default function ScriptTelaPrincipal(navigation) {
 
   const modulos = Array.from({ length: 5 }, (_, index) => ({
     id: index + 1,
-    ativo: index < progresso,
+    ativo: index + 1 <= progresso,
+
+    // zigue-zague
+    deslocamento: index % 2 === 0 ? -40 : 40,
   }));
 
   function abrirModulo(item) {
     if (!item.ativo) return;
 
-    console.log("Abrindo módulo", item.id);
-    // navigation.navigate(`TelaModulo${item.id}`);
+    navigation.navigate("TelaQuestoes", {
+      moduloId: item.id,
+    });
   }
 
   return {

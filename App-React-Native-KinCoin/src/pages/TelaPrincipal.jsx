@@ -23,7 +23,10 @@ export default function TelaPrincipal({ navigation }) {
           {modulos.map((item) => (
             <TouchableOpacity
               key={item.id}
-              style={item.ativo ? style.pontoAtivo : style.pontoInativo}
+              style={[
+                item.ativo ? style.pontoAtivo : style.pontoInativo,
+                { marginLeft: item.deslocamento },
+              ]}
               disabled={!item.ativo}
               onPress={() => abrirModulo(item)}
             >
