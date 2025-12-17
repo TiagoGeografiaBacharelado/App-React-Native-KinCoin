@@ -1,34 +1,55 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useCallback } from "react";
 import { View, Text, TouchableOpacity, Image, ScrollView } from "react-native";
 import { AntDesign, Feather } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useFocusEffect } from "@react-navigation/native";
 import style from "./style/StyleTelaPrincipal";
 import Esquilo from "../assets/images/EsquiloSentado.png";
 
 export default function TelaPrincipal({ navigation }) {
-  const [fase1Concluida, setFase1Concluida] = useState(false);
+  const [progresso, setProgresso] = useState(1);
 
-  useEffect(() => {
-    carregarProgresso();
-  }, []);
+  useFocusEffect(
+    useCallback(() => {
+      carregarProgresso();
+    }, [])
+  );
 
   async function carregarProgresso() {
-    const fase1 = await AsyncStorage.getItem("@fase1Concluida");
-    setFase1Concluida(fase1 === "true");
+    const valor = await AsyncStorage.getItem("@progresso");
+    setProgresso(valor ? Number(valor) : 1);
   }
 
   const modulos = [
     {
       id: 1,
-      ativo: true,
+      ativo: progresso >= 1,
       deslocamento: 0,
       tela: "TelaQuestoes1",
     },
     {
       id: 2,
-      ativo: fase1Concluida,
+      ativo: progresso >= 2,
       deslocamento: 40,
-      tela: "TelaQuestoes2", // próxima atividade
+      tela: "TelaQuestoes2",
+    },
+    {
+      id: 3,
+      ativo: progresso >= 3,
+      deslocamento: -40,
+      tela: "TelaQuestoes3",
+    },
+    {
+      id: 4,
+      ativo: progresso >= 4,
+      deslocamento: 40,
+      tela: "TelaQuestoes4",
+    },
+    {
+      id: 5,
+      ativo: progresso >= 5,
+      deslocamento: -40,
+      tela: "TelaConclusao",
     },
   ];
 
