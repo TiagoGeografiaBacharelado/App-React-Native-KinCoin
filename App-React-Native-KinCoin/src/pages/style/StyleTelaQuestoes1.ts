@@ -59,14 +59,40 @@ export default StyleSheet.create({
     borderColor: "#F6A623",
   },
 
+  opcaoCorreta: {
+    backgroundColor: "#4CAF50",
+  },
+
+  opcaoErrada: {
+    backgroundColor: "#F44336",
+  },
+
   opcaoTexto: {
     color: "#000",
     fontSize: 14,
   },
 
+  feedback: {
+    marginTop: 20,
+    paddingHorizontal: 10,
+  },
+
+  textoCorreto: {
+    color: "#4CAF50",
+    fontSize: 16,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+
+  textoErrado: {
+    color: "#F44336",
+    fontSize: 15,
+    textAlign: "center",
+  },
+
   botaoConfirmar: {
     marginTop: "auto",
-    backgroundColor: "#B0B0B0",
+    backgroundColor: "#F6A623",
     paddingVertical: 14,
     borderRadius: 20,
     alignItems: "center",
