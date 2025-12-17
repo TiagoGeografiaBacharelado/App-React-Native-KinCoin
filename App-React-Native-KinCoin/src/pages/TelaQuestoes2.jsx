@@ -1,18 +1,18 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-import style from "./style/StyleTelaQuestoes1";
-import Esquilo from "../assets/images/EsquiloSentado.png";
-import useTelaQuestoes1 from "./script/ScriptTelaQuestoes1";
+import style from "./style/StyleTelaQuestoes2";
+import Esquilo from "../assets/images/EsquiloComOculos.png";
+import useTelaQuestoes2 from "./script/ScriptTelaQuestoes2";
 
-export default function TelaQuestoes1({ navigation }) {
+export default function TelaQuestoes2({ navigation }) {
   const {
     perguntaAtual,
     respostaSelecionada,
     setRespostaSelecionada,
     confirmado,
     acaoBotao,
-  } = useTelaQuestoes1(navigation);
+  } = useTelaQuestoes2(navigation);
 
   return (
     <View style={style.container}>
@@ -22,7 +22,7 @@ export default function TelaQuestoes1({ navigation }) {
           <AntDesign name="arrowleft" size={22} color="#FFF" />
         </TouchableOpacity>
 
-        <Text style={style.headerTitulo}>Módulo 1</Text>
+        <Text style={style.headerTitulo}>Módulo 2</Text>
         <View style={{ width: 22 }} />
       </View>
 
@@ -34,7 +34,7 @@ export default function TelaQuestoes1({ navigation }) {
       <Image source={Esquilo} style={style.esquilo} resizeMode="contain" />
 
       {/* Alternativas */}
-      <View style={[style.alternativas, { marginBottom: 20 }]}>
+      <View style={style.alternativas}>
         {perguntaAtual.alternativas.map((item, index) => (
           <TouchableOpacity
             key={index}

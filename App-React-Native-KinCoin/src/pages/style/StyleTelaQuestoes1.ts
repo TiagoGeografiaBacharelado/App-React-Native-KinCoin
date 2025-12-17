@@ -3,55 +3,59 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#061B2E",
+    backgroundColor: "#1B1E2F",
     paddingHorizontal: 20,
   },
 
+  /* Header */
   header: {
     marginTop: 40,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    marginBottom: 30,
+    marginBottom: 24,
   },
 
   headerTitulo: {
-    color: "#FFF",
+    color: "#FFFFFF",
     fontSize: 18,
     fontWeight: "600",
   },
 
+  /* Pergunta */
   perguntaArea: {
-    backgroundColor: "#FFF",
-    paddingVertical: 16,
-    paddingHorizontal: 20,
-    borderRadius: 16,
-    alignSelf: "flex-start",
-    marginBottom: 20,
+    backgroundColor: "#2A2E4A",
+    borderRadius: 14,
+    paddingVertical: 14,
+    paddingHorizontal: 18,
+    marginBottom: 30,
   },
 
   perguntaTexto: {
-    color: "#000",
+    color: "#FFFFFF",
     fontSize: 15,
+    textAlign: "center",
     fontWeight: "500",
   },
 
+  /* Esquilo */
   esquilo: {
-    width: 110,
-    height: 110,
-    alignSelf: "flex-end",
-    marginBottom: 20,
+    width: 140,
+    height: 140,
+    alignSelf: "center",
+    marginBottom: 30,
   },
 
+  /* Alternativas */
   alternativas: {
     gap: 14,
   },
 
   opcao: {
-    backgroundColor: "#FFF",
+    backgroundColor: "#3A3E5C",
     paddingVertical: 14,
     paddingHorizontal: 16,
-    borderRadius: 14,
+    borderRadius: 12,
   },
 
   opcaoSelecionada: {
@@ -68,10 +72,11 @@ export default StyleSheet.create({
   },
 
   opcaoTexto: {
-    color: "#000",
+    color: "#FFFFFF",
     fontSize: 14,
   },
 
+  /* Feedback */
   feedback: {
     marginTop: 20,
     paddingHorizontal: 10,
@@ -90,21 +95,22 @@ export default StyleSheet.create({
     textAlign: "center",
   },
 
+  /* Botão */
   botaoConfirmar: {
     marginTop: "auto",
-    backgroundColor: "#F6A623",
-    paddingVertical: 14,
-    borderRadius: 20,
+    backgroundColor: "#7B7EFF",
+    paddingVertical: 16,
+    borderRadius: 16,
     alignItems: "center",
     marginBottom: 30,
   },
 
   botaoDesabilitado: {
-    opacity: 0.6,
+    opacity: 0.5,
   },
 
   botaoTexto: {
-    color: "#FFF",
+    color: "#FFFFFF",
     fontWeight: "600",
     fontSize: 15,
   },
