@@ -3,16 +3,16 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import style from "./style/StyleTelaQuestoes1";
 import Esquilo from "../assets/images/EsquiloSentado.png";
-import useTelaQuestoes3 from "./script/ScriptTelaQuestoes3";
+import useTelaQuestoes4 from "./script/ScriptTelaQuestoes4";
 
-export default function TelaQuestoes3({ navigation }) {
+export default function TelaQuestoes4({ navigation }) {
   const {
     perguntaAtual,
     respostaSelecionada,
     setRespostaSelecionada,
     confirmado,
     acaoBotao,
-  } = useTelaQuestoes3(navigation);
+  } = useTelaQuestoes4(navigation);
 
   return (
     <View style={style.container}>
