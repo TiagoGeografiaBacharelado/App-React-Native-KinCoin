@@ -7,10 +7,14 @@ export default function TelaPerguntas4({ navigation }) {
   async function escolherResposta(resposta) {
     console.log("Resposta P4:", resposta);
 
-    // 🔥 RESET TOTAL DO PROGRESSO
+    // 🔥 RESET DO PROGRESSO
     await AsyncStorage.setItem("@progresso", "1");
 
-    // ir para a TelaPrincipal limpando o histórico
+    // 🔥 RESET DO PERFIL
+    await AsyncStorage.removeItem("@perfil_foto");
+    await AsyncStorage.removeItem("@perfil_nome");
+
+    // Volta para a TelaPrincipal limpando o histórico
     navigation.reset({
       index: 0,
       routes: [{ name: "TelaPrincipal" }],
@@ -25,7 +29,6 @@ export default function TelaPerguntas4({ navigation }) {
       </Text>
 
       <TouchableOpacity
-        activeOpacity={0.8}
         style={[style.botao, style.btnVerde]}
         onPress={() => escolherResposta("Quitar dívidas")}
       >
@@ -33,7 +36,6 @@ export default function TelaPerguntas4({ navigation }) {
       </TouchableOpacity>
 
       <TouchableOpacity
-        activeOpacity={0.8}
         style={[style.botao, style.btnLaranja]}
         onPress={() => escolherResposta("Criar reserva")}
       >
@@ -41,7 +43,6 @@ export default function TelaPerguntas4({ navigation }) {
       </TouchableOpacity>
 
       <TouchableOpacity
-        activeOpacity={0.8}
         style={[style.botao, style.btnVermelho]}
         onPress={() => escolherResposta("Investir")}
       >
@@ -49,7 +50,6 @@ export default function TelaPerguntas4({ navigation }) {
       </TouchableOpacity>
 
       <TouchableOpacity
-        activeOpacity={0.8}
         style={[style.botao, style.btnRoxo]}
         onPress={() => escolherResposta("Organizar gastos")}
       >
