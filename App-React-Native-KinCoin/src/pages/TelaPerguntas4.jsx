@@ -1,16 +1,21 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import style from "./style/StyleTelaPerguntas4";
 
 export default function TelaPerguntas4({ navigation }) {
-  const escolherResposta = (resposta) => {
+  async function escolherResposta(resposta) {
     console.log("Resposta P4:", resposta);
 
+    // 🔥 RESET TOTAL DO PROGRESSO
+    await AsyncStorage.setItem("@progresso", "1");
+
+    // ir para a TelaPrincipal limpando o histórico
     navigation.reset({
       index: 0,
       routes: [{ name: "TelaPrincipal" }],
     });
-  };
+  }
 
   return (
     <View style={style.container}>

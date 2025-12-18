@@ -100,13 +100,11 @@ export default function TelaPrincipal({ navigation }) {
       </ScrollView>
 
       <View style={style.footer}>
-        {/* MÓDULOS ATIVO */}
         <TouchableOpacity style={style.footerBotaoAtivo}>
           <AntDesign name="star" size={18} color="#FFF" />
           <Text style={style.footerTextoAtivo}>Módulos</Text>
         </TouchableOpacity>
 
-        {/* PERFIL INATIVO */}
         <TouchableOpacity
           style={style.footerBotao}
           onPress={() => navigation.navigate("TelaPerfil")}
