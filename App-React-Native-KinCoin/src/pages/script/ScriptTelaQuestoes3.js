@@ -51,7 +51,8 @@ export default function useTelaQuestoes3(navigation) {
 
     if (novaFila.length === 0) {
       await AsyncStorage.setItem("@progresso", "4");
-      navigation.navigate("TelaPrincipal");
+      // Navega para TelaConclusao em vez de TelaPrincipal
+      navigation.navigate("TelaConclusao");
       return;
     }
 
