@@ -99,14 +99,18 @@ export default function TelaPrincipal({ navigation }) {
         <Image source={Esquilo} style={style.esquilo} resizeMode="contain" />
       </ScrollView>
 
-      {/* Footer */}
       <View style={style.footer}>
+        {/* MÓDULOS ATIVO */}
         <TouchableOpacity style={style.footerBotaoAtivo}>
           <AntDesign name="star" size={18} color="#FFF" />
           <Text style={style.footerTextoAtivo}>Módulos</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={style.footerBotao}>
+        {/* PERFIL INATIVO */}
+        <TouchableOpacity
+          style={style.footerBotao}
+          onPress={() => navigation.navigate("TelaPerfil")}
+        >
           <AntDesign name="user" size={18} color="#999" />
           <Text style={style.footerTexto}>Perfil</Text>
         </TouchableOpacity>
