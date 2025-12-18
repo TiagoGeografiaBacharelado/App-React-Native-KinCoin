@@ -4,12 +4,10 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#061B2E",
-    alignItems: "center",
   },
 
   /* HEADER */
   header: {
-    width: "100%",
     backgroundColor: "#F6A623",
     margin: 16,
     borderRadius: 20,
@@ -22,15 +20,16 @@ export default StyleSheet.create({
 
   headerTitulo: {
     color: "#FFF",
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: "600",
   },
 
-  /* AVATAR */
+  /* PERFIL */
   avatar: {
     width: 120,
     height: 120,
     borderRadius: 60,
+    alignSelf: "center",
     marginTop: 20,
     marginBottom: 10,
   },
@@ -39,16 +38,16 @@ export default StyleSheet.create({
     color: "#FFF",
     fontSize: 20,
     fontWeight: "600",
+    textAlign: "center",
     marginBottom: 20,
   },
 
   /* XP */
   xpContainer: {
-    width: "85%",
-    backgroundColor: "#0D2A45",
-    borderRadius: 16,
+    marginHorizontal: 24,
+    backgroundColor: "#0E2A44",
+    borderRadius: 20,
     padding: 16,
-    marginBottom: 30,
   },
 
   xpHeader: {
@@ -68,7 +67,6 @@ export default StyleSheet.create({
   },
 
   barraXP: {
-    width: "100%",
     height: 10,
     backgroundColor: "#1B3A57",
     borderRadius: 10,
@@ -78,44 +76,5 @@ export default StyleSheet.create({
   xpFill: {
     height: "100%",
     backgroundColor: "#F6A623",
-  },
-
-  /* FOOTER (IGUAL AO PRINCIPAL) */
-  footer: {
-    flexDirection: "row",
-    backgroundColor: "#FFF",
-    margin: 16,
-    borderRadius: 30,
-    paddingVertical: 10,
-    justifyContent: "space-around",
-    alignItems: "center",
-    position: "absolute",
-    bottom: 0,
-    width: "90%",
-  },
-
-  footerBotaoAtivo: {
-    flexDirection: "row",
-    backgroundColor: "#F6A623",
-    borderRadius: 20,
-    paddingHorizontal: 20,
-    paddingVertical: 8,
-    alignItems: "center",
-  },
-
-  footerTextoAtivo: {
-    color: "#FFF",
-    marginLeft: 6,
-    fontWeight: "600",
-  },
-
-  footerBotao: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-
-  footerTexto: {
-    color: "#999",
-    marginLeft: 6,
   },
 });

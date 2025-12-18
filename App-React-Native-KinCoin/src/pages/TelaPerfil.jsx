@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useCallback } from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useFocusEffect } from "@react-navigation/native";
 import style from "./style/StyleTelaPerfil";
 import useExperiencia from "./script/ScriptUseExperiencia";
 
@@ -11,9 +12,11 @@ export default function TelaPerfil({ navigation }) {
   const [nome, setNome] = useState("Usuário");
   const [foto, setFoto] = useState(null);
 
-  useEffect(() => {
-    carregarPerfil();
-  }, []);
+  useFocusEffect(
+    useCallback(() => {
+      carregarPerfil();
+    }, [])
+  );
 
   async function carregarPerfil() {
     const nomeSalvo = await AsyncStorage.getItem("@perfil_nome");
@@ -25,7 +28,7 @@ export default function TelaPerfil({ navigation }) {
 
   return (
     <View style={style.container}>
-      {/* HEADER */}
+      {/* Header */}
       <View style={style.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <AntDesign name="arrowleft" size={22} color="#FFF" />
@@ -33,21 +36,20 @@ export default function TelaPerfil({ navigation }) {
 
         <Text style={style.headerTitulo}>Perfil</Text>
 
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("TelaPerfilEditar")}
+        >
           <AntDesign name="edit" size={20} color="#FFF" />
         </TouchableOpacity>
       </View>
 
-      {/* AVATAR */}
       <Image
         source={foto ? { uri: foto } : require("../assets/images/avatar.png")}
         style={style.avatar}
       />
 
-      {/* NOME */}
       <Text style={style.nome}>{nome}</Text>
 
-      {/* XP */}
       <View style={style.xpContainer}>
         <View style={style.xpHeader}>
           <Text style={style.levelText}>Level {nivel}</Text>
@@ -64,24 +66,6 @@ export default function TelaPerfil({ navigation }) {
             ]}
           />
         </View>
-      </View>
-
-      {/* FOOTER */}
-      <View style={style.footer}>
-        {/* MÓDULOS INATIVO */}
-        <TouchableOpacity
-          style={style.footerBotao}
-          onPress={() => navigation.navigate("TelaPrincipal")}
-        >
-          <AntDesign name="star" size={18} color="#999" />
-          <Text style={style.footerTexto}>Módulos</Text>
-        </TouchableOpacity>
-
-        {/* PERFIL ATIVO */}
-        <TouchableOpacity style={style.footerBotaoAtivo}>
-          <AntDesign name="user" size={18} color="#FFF" />
-          <Text style={style.footerTextoAtivo}>Perfil</Text>
-        </TouchableOpacity>
       </View>
     </View>
   );
