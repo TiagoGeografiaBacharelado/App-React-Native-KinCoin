@@ -1,7 +1,6 @@
 import { StyleSheet } from "react-native";
 
 export const style = StyleSheet.create({
-
   progressoContainer: {
     flexDirection: "row",
     justifyContent: "center",
@@ -55,7 +54,20 @@ export const style = StyleSheet.create({
     borderRadius: 10,
     width: "100%",
     padding: 12,
-    marginBottom: 15,
+    marginBottom: 5,
+    borderWidth: 1,
+    borderColor: "#fff",
+  },
+
+  inputErro: {
+    borderColor: "red",
+  },
+
+  erroTexto: {
+    color: "red",
+    alignSelf: "flex-start",
+    marginLeft: 10,
+    marginBottom: 10,
   },
 
   dataContainer: {
@@ -73,6 +85,8 @@ export const style = StyleSheet.create({
     color: "#000",
     textAlign: "center",
     fontSize: 16,
+    borderWidth: 1,
+    borderColor: "#fff",
   },
 
   botao: {
@@ -81,8 +95,9 @@ export const style = StyleSheet.create({
     width: "100%",
     borderRadius: 10,
     alignItems: "center",
+    marginTop: 10,
   },
-  
+
   textoBotao: {
     color: "#fff",
     fontWeight: "bold",
