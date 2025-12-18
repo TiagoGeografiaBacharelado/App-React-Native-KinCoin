@@ -8,10 +8,9 @@ import useExperiencia from "./script/ScriptUseExperiencia";
 export default function TelaConclusao({ navigation }) {
   const { ganharXP } = useExperiencia();
   const route = useRoute();
-  const xpGanho = route.params?.xpGanho || 25; // Padrão 25 se não passado
+  const xpGanho = route.params?.xpGanho || 25;
 
   useEffect(() => {
-    // Concede o XP calculado
     ganharXP(xpGanho);
   }, []);
 
