@@ -7,8 +7,14 @@ import {
   ScrollView,
   Alert,
 } from "react-native";
+
 import { style } from "./style/StyleTelaCadastro";
 import { ScriptTelaCadastro } from "./script/ScriptTelaCadastro";
+
+// 🔥 Firebase
+import { auth, db } from "../firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 
 export default function TelaCadastro() {
   const [nome, setNome] = useState("");
@@ -19,27 +25,61 @@ export default function TelaCadastro() {
   const [mes, setMes] = useState("");
   const [ano, setAno] = useState("");
 
-  function avancar() {
-    const erro = ScriptTelaCadastro({ nome, email, senha, confirmarSenha, dia, mes, ano });
+  async function avancar() {
+    // 1️⃣ Validação local
+    const erro = ScriptTelaCadastro({
+      nome,
+      email,
+      senha,
+      confirmarSenha,
+      dia,
+      mes,
+      ano,
+    });
 
     if (erro) {
       Alert.alert("Erro no cadastro", erro);
       return;
     }
 
-    Alert.alert("Sucesso!", `Cadastro de ${nome} realizado com sucesso!`);
+    try {
+      // 2️⃣ Criar usuário no Firebase Auth
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        senha
+      );
+
+      const uid = userCredential.user.uid;
+
+      // 3️⃣ Salvar dados no Firestore
+      await setDoc(doc(db, "users", uid), {
+        nome,
+        email,
+        dataNascimento: {
+          dia,
+          mes,
+          ano,
+        },
+        kincoins: 0,
+        criadoEm: serverTimestamp(),
+      });
+
+      Alert.alert("Sucesso!", "Cadastro realizado com sucesso!");
+    } catch (error) {
+      Alert.alert("Erro no Firebase", error.message);
+    }
   }
 
   return (
     <ScrollView contentContainerStyle={style.container}>
-    
       <View style={style.progressoContainer}>
         <View style={style.progressoAtivo} />
         <View style={style.progressoInativo} />
         <View style={style.progressoInativo} />
       </View>
 
-      <Text style={style.titulo}>Seja bem-vindo, ao KinCoin!</Text>
+      <Text style={style.titulo}>Seja bem-vindo ao KinCoin!</Text>
 
       <Text style={style.label}>Nome</Text>
       <TextInput
@@ -81,7 +121,6 @@ export default function TelaCadastro() {
         <TextInput
           style={[style.inputData, { width: "25%" }]}
           placeholder="Dia"
-          placeholderTextColor="#666"
           keyboardType="numeric"
           maxLength={2}
           value={dia}
@@ -90,7 +129,6 @@ export default function TelaCadastro() {
         <TextInput
           style={[style.inputData, { width: "45%" }]}
           placeholder="Mês"
-          placeholderTextColor="#666"
           keyboardType="numeric"
           maxLength={2}
           value={mes}
@@ -99,7 +137,6 @@ export default function TelaCadastro() {
         <TextInput
           style={[style.inputData, { width: "25%" }]}
           placeholder="Ano"
-          placeholderTextColor="#666"
           keyboardType="numeric"
           maxLength={4}
           value={ano}
