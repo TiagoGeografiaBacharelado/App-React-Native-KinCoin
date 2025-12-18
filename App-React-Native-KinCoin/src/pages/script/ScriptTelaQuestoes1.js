@@ -138,17 +138,12 @@ export default function ScriptTelaQuestoes1(navigation) {
 
     novaFila.shift();
 
-    // ✅ TERMINOU A QUESTÃO 1
     if (novaFila.length === 0) {
-      await AsyncStorage.setItem("@fase1Concluida", "true");
+      await AsyncStorage.setItem("@fase2Concluida", "true");
 
-      // 🔓 LIBERA A QUESTÃO 2
       await AsyncStorage.setItem("@progresso", "2");
 
-      navigation.reset({
-        index: 0,
-        routes: [{ name: "TelaPrincipal" }],
-      });
+      navigation.navigate("TelaConclusao");
       return;
     }
 
