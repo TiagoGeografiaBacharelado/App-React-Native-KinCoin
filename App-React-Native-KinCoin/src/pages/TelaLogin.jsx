@@ -1,17 +1,30 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, Image, Alert } from "react-native";
 import styles from "./style/StyleTelaLogin";
 import { FontAwesome, AntDesign } from "@expo/vector-icons";
 import Esquilo from "../assets/images/EsquiloAndandoDireita.png";
+
+// 🔥 Firebase
+import { auth } from "../firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 export default function TelaLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = () => {
-    console.log("Email:", email);
-    console.log("Senha:", password);
-  };
+  async function handleLogin() {
+    if (!email || !password) {
+      Alert.alert("Erro", "Preencha e-mail e senha");
+      return;
+    }
+
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      Alert.alert("Sucesso", "Login realizado com sucesso!");
+    } catch (error) {
+      Alert.alert("Erro ao entrar", error.message);
+    }
+  }
 
   return (
     <View style={styles.container}>
