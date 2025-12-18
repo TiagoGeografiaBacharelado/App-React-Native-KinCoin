@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-import style from "./style/StyleTelaQuestoes2";
+import style from "./style/StyleTelaQuestoesPadrao";
 import Esquilo from "../assets/images/EsquiloComOculos.png";
 import useTelaQuestoes2 from "./script/ScriptTelaQuestoes2";
 
