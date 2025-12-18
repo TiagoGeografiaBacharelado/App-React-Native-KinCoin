@@ -11,6 +11,14 @@ import TelaPerguntas from "./src/pages/TelaPerguntas";
 import TelaPerguntas2 from "./src/pages/TelaPerguntas2";
 import TelaPerguntas3 from "./src/pages/TelaPerguntas3";
 import TelaPerguntas4 from "./src/pages/TelaPerguntas4";
+import TelaPrincipal from "./src/pages/TelaPrincipal";
+import TelaQuestoes1 from "./src/pages/TelaQuestoes1";
+import TelaConclusao from "./src/pages/TelaConclusao";
+import TelaQuestoes2 from "./src/pages/TelaQuestoes2";
+import TelaQuestoes3 from "./src/pages/TelaQuestoes3";
+import TelaQuestoes4 from "./src/pages/TelaQuestoes4";
+import TelaPerfil from "./src/pages/TelaPerfil";
+import TelaPerfilEditar from "./src/pages/TelaPerfilEditar";
 
 const Stack = createNativeStackNavigator();
 
@@ -58,7 +66,6 @@ export default function App() {
           component={TelaPerguntas2}
           options={{ headerShown: false }}
         />
-
         <Stack.Screen
           name="TelaPerguntas3"
           component={TelaPerguntas3}
@@ -67,6 +74,46 @@ export default function App() {
         <Stack.Screen
           name="TelaPerguntas4"
           component={TelaPerguntas4}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="TelaPrincipal"
+          component={TelaPrincipal}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="TelaPerfil"
+          component={TelaPerfil}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="TelaQuestoes1"
+          component={TelaQuestoes1}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="TelaQuestoes2"
+          component={TelaQuestoes2}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="TelaQuestoes3"
+          component={TelaQuestoes3}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="TelaQuestoes4"
+          component={TelaQuestoes4}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="TelaConclusao"
+          component={TelaConclusao}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="TelaPerfilEditar"
+          component={TelaPerfilEditar}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

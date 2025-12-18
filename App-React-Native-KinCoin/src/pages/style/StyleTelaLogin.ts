@@ -3,68 +3,75 @@ import { StyleSheet } from "react-native";
 export const style = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#0A1F3D",
+    backgroundColor: "#001B2E",
     alignItems: "center",
     justifyContent: "center",
-    paddingHorizontal: 20,
+    padding: 20,
   },
 
   logo: {
-    width: 120,
-    height: 120,
+    width: 150,
+    height: 150,
     marginBottom: 20,
   },
 
   welcomeText: {
-    color: "white",
+    color: "#fff",
     fontSize: 18,
     textAlign: "center",
-    marginBottom: 30,
+    marginBottom: 20,
   },
 
   input: {
     width: "100%",
-    height: 50,
-    backgroundColor: "white",
-    borderRadius: 8,
-    paddingHorizontal: 15,
-    marginBottom: 15,
+    backgroundColor: "#fff",
+    borderRadius: 10,
+    padding: 12,
+    marginBottom: 5,
+    borderWidth: 1,
+    borderColor: "#fff",
+  },
+
+  erroTexto: {
+    color: "red",
+    alignSelf: "flex-start",
+    marginBottom: 10,
+    marginLeft: 5,
   },
 
   forgotPassword: {
     alignSelf: "flex-end",
-    color: "#A0A0A0",
+    color: "#F7931A",
     marginBottom: 20,
   },
 
   loginButton: {
     width: "100%",
-    height: 50,
-    backgroundColor: "#FF8C00",
-    borderRadius: 8,
+    backgroundColor: "#F7931A",
+    paddingVertical: 15,
+    borderRadius: 10,
     alignItems: "center",
-    justifyContent: "center",
     marginBottom: 15,
   },
 
   loginButtonText: {
-    color: "white",
-    fontSize: 16,
+    color: "#fff",
     fontWeight: "bold",
+    fontSize: 16,
   },
 
   signupText: {
-    color: "white",
-    marginBottom: 20,
+    color: "#fff",
+    marginBottom: 15,
   },
 
   signupLink: {
-    color: "#FF8C00",
+    color: "#F7931A",
     fontWeight: "bold",
   },
 
   orText: {
-    color: "white",
+    color: "#fff",
     marginBottom: 10,
   },
 
@@ -75,7 +82,7 @@ export const style = StyleSheet.create({
   },
 
   socialButton: {
-    backgroundColor: "#3b5998",
+    backgroundColor: "#16324A",
     width: 50,
     height: 50,
     borderRadius: 25,

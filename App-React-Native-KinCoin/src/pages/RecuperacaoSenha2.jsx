@@ -32,7 +32,10 @@ export default function RecuperacaoSenha2({ navigation }) {
         ))}
       </View>
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate("TelaPerguntas")}
+      >
         <Text style={styles.buttonText}>Continuar</Text>
       </TouchableOpacity>
 

@@ -1,9 +1,18 @@
-export function ScriptTelaCadastro({ nome, email, senha, confirmarSenha, dia, mes, ano }) {
+export function ScriptTelaCadastro({
+  nome,
+  email,
+  senha,
+  confirmarSenha,
+  dia,
+  mes,
+  ano,
+}) {
   if (!nome || !email || !senha || !confirmarSenha || !dia || !mes || !ano) {
     return "Preencha todos os campos!";
   }
 
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { //expressão regular (regex) estudar mais depois
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    //expressão regular (regex) estudar mais depois
     return "E-mail inválido!";
   }
 
