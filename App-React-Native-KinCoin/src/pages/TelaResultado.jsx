@@ -1,11 +1,10 @@
-//TelaFinal.jsx
 import { Button, Text } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function TelaFinal({ route, navigation }) {
+export default function TelaResultado({ route, navigation }) {
 
   const { correct, total } = route.params;
-  
+
   const wrong = total - correct;
   const percent = Math.round((correct / total) * 100);
 
@@ -18,6 +17,7 @@ export default function TelaFinal({ route, navigation }) {
 
   return (
     <SafeAreaView style={{ flex: 1, justifyContent: "center", padding: 24 }}>
+      
       <Text style={{ fontSize: 28, fontWeight: "bold", textAlign: "center" }}>
         Lição Concluída!
       </Text>
@@ -41,10 +41,11 @@ export default function TelaFinal({ route, navigation }) {
       <Button
         mode="contained"
         style={{ marginTop: 30 }}
-        onPress={() => navigation.navigate("TelaDeQuestao")}
+        onPress={() => navigation.replace("TelaDeQuestao")}
       >
         Voltar ao início
       </Button>
+
     </SafeAreaView>
   );
 }
